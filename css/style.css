@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');    
     * {
         box-sizing: border-box;
         margin: 0;
@@ -9,7 +10,7 @@
         background-image: url(../img/bg-m.jpg);
         background-repeat: no-repeat;
         background-size: cover;
-        font-family: "Myriad Pro";
+        font-family: "Lato";
         padding-bottom: 3em;
     }
     
