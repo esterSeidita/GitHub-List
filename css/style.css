@@ -21,7 +21,7 @@
     }
     
     .mainImg {
-        max-width: 50%;
+        max-width: 70%;
         display: block;
         margin: 50px auto 20px auto;
     }
@@ -75,5 +75,8 @@
         }
         #list a {
             font-size: 1rem;
+        }
+        .mainImg{
+            max-width: 20%;
         }
     }
