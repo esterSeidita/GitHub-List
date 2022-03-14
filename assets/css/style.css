@@ -8,7 +8,7 @@
 
 .hidden {
     width: 85vw;
-    height: 70vh;
+    height: 40vh;
     background: #45ebd3;
     position: fixed;
     left: 50%;
@@ -22,6 +22,8 @@
     align-items: center;
     justify-content: center;
     padding-top: 4em;
+    max-width: 300px;
+    max-height: 300px;
 }
 
 .hidden h1{
@@ -35,7 +37,8 @@
 
 .hidden .groupBtn button{
     padding: 1em;
-    margin: 1em;
+    margin-bottom: 1em;
+    width: 100%;
     background-color: #fff;
     border-radius: 0.7em;
     border: 1px solid #45ebd3;
@@ -123,9 +126,16 @@ body>hr {
         width: 70vw;
         height: 60vh;
     }
+    .hidden{
+        align-items: center;
+    }
     .hidden .groupBtn {
-        display: block;
-        padding: 1em;
+        flex-direction: row;
+        gap: 10px;
+    }
+
+    .hidden .groupBtn button{
+        /* margin: 1em; */
     }
 }
 
