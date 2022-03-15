@@ -9,7 +9,7 @@
 .hidden {
     width: 85vw;
     height: 70vh;
-    background: #45ebd3;
+    background: #bfdfd9;
     position: fixed;
     left: 50%;
     top: 50%;
@@ -21,13 +21,32 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding-top: 4em;
+    /* padding-top: 4em; */
     max-width: 300px;
     max-height: 300px;
 }
 
 .hidden h1{
     font-size: 1rem;
+}
+.moveToRight, .moveToLeft{
+    font-size: 2em;
+    width: 45px;
+    border-radius: 2em;
+    position: absolute;
+    cursor: pointer;
+}
+.moveToRight:hover, .moveToLeft:hover{
+    width: 50px;
+}
+
+.moveToRight{
+    right: -20px;
+
+}
+.moveToLeft{
+    left: -20px;
+
 }
 .hidden .groupBtn {
     display: flex;
@@ -41,7 +60,7 @@
     width: 100%;
     background-color: #fff;
     border-radius: 0.7em;
-    border: 1px solid #45ebd3;
+    border: none;
     cursor: pointer;
 }
 .hidden .groupBtn .inactive button{
@@ -56,19 +75,23 @@
 
 .hidden .closeBtn{
     position: absolute;
-    right: 30px;
+    right: 20px;
     top: 10px;
-    color: #45ebd3;
+    color: #bfdfd9;
     font-weight: bolder;
-    background-color: black;
     padding: 0.5em;
-    width: 30px;
-    height: 30px;
+    width: 40px;
+    height: 40px;
+    /* background-color: #40d6c0; */
     border: none;
-    border-radius: 1em;
+    border-radius: 2em;
     cursor: pointer;
 }
 
+.hidden .closeBtn:hover{
+    width: 42px;
+    height: 42px;
+}
 
 body {
     background: black;
