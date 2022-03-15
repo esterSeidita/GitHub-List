@@ -1,3 +1,7 @@
+/* -------------------------------------------------------------------------- */
+/*                             Universal Settings                             */
+/* -------------------------------------------------------------------------- */
+
 @import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
 
 * {
@@ -5,6 +9,20 @@
     margin: 0;
     padding: 0;
 }
+
+body {
+    background: black;
+    background-image: url(./../img/bg-m.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    font-family: "Lato";
+    padding-bottom: 3em;
+}
+
+/* -------------------------------------------------------------------------- */
+/*                                 Hidden Div                                 */
+/* -------------------------------------------------------------------------- */
 
 .hidden {
     width: 85vw;
@@ -26,35 +44,45 @@
     max-height: 300px;
 }
 
-.hidden h1{
+.hidden h1 {
     font-size: 1rem;
 }
-.moveToRight, .moveToLeft{
+
+/* -------------------------------------------------------------------------- */
+/*                                Arrow Buttons                               */
+/* -------------------------------------------------------------------------- */
+
+.moveToRight, .moveToLeft {
     font-size: 2em;
     width: 45px;
     border-radius: 2em;
     position: absolute;
     cursor: pointer;
 }
-.moveToRight:hover, .moveToLeft:hover{
+
+.moveToRight:hover, .moveToLeft:hover {
     width: 50px;
 }
 
-.moveToRight{
+.moveToRight {
     right: -20px;
-
 }
-.moveToLeft{
+
+.moveToLeft {
     left: -20px;
-
 }
+
+/* -------------------------------------------------------------------------- */
+/*                                   Buttons                                  */
+/* -------------------------------------------------------------------------- */
+
 .hidden .groupBtn {
     display: flex;
     flex-direction: column;
     padding: 3em;
 }
 
-.hidden .groupBtn button{
+.hidden .groupBtn button {
     padding: 1em;
     margin-bottom: 1em;
     width: 100%;
@@ -62,18 +90,32 @@
     border-radius: 0.7em;
     border: none;
     cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    color: #262626;
+    transition: .7s;
+    z-index: 3;
+    font-weight: bold;
 }
-.hidden .groupBtn .inactive button{
+
+.hidden .groupBtn button:hover {
+    color: white;
+
+}
+
+/* Inactive */
+.hidden .groupBtn .inactive button {
     background-color: grey;
-    cursor:default;
+    cursor: default;
 }
-.hidden .groupBtn .inactive{
+
+.hidden .groupBtn .inactive {
     /* pointer-events: none; */
     opacity: .4;
-
 }
 
-.hidden .closeBtn{
+/* Close Button */
+.hidden .closeBtn {
     position: absolute;
     right: 20px;
     top: 10px;
@@ -88,20 +130,58 @@
     cursor: pointer;
 }
 
-.hidden .closeBtn:hover{
+.hidden .closeBtn:hover {
     width: 42px;
     height: 42px;
 }
 
-body {
-    background: black;
-    background-image: url(./../img/bg-m.jpg);
-    background-repeat: no-repeat;
-    background-size: cover;
+/* -------------------------------------------------------------------------- */
+/*                             Transition Effects                             */
+/* -------------------------------------------------------------------------- */
 
-    font-family: "Lato";
-    padding-bottom: 3em;
+.linkedinBtn button:hover:after {
+    width: 100%;
+    background: #3498db;
 }
+.linkedinBtn button:after {
+    content: "";
+    height: 100%;
+    left: 0;
+    top: 0;
+    width: 0px;
+    position: absolute;
+    transition: all 1.4s ease;
+    -webkit-transition: all 1.4s ease;
+    z-index: -1;
+}
+.linkedinBtn button:hover:before {
+    left: 0;
+}
+
+/*/*/
+
+.githubBtn button:hover:after {
+    width: 100%;
+    background: #3498db;
+}
+.githubBtn button:after {
+    content: "";
+    height: 100%;
+    right: 0;
+    top: 0;
+    width: 0px;
+    position: absolute;
+    transition: all 1.4s ease;
+    -webkit-transition: all 1.4s ease;
+    z-index: -1;
+}
+.githubBtn button:hover:before {
+    right: 0;
+}
+
+/* -------------------------------------------------------------------------- */
+/*                                    Main                                    */
+/* -------------------------------------------------------------------------- */
 
 body>hr {
     max-width: 30%;
@@ -144,14 +224,20 @@ body>hr {
     /* padding: 3em; */
 }
 
+/* -------------------------------------------------------------------------- */
+/*                                 Responsive                                 */
+/* -------------------------------------------------------------------------- */
+
 @media screen and (min-width: 450px) {
     .hidden {
         width: 70vw;
         height: 60vh;
     }
-    .hidden{
+
+    .hidden {
         align-items: center;
     }
+
     .hidden .groupBtn {
         flex-direction: row;
         gap: 10px;
@@ -164,8 +250,9 @@ body>hr {
         height: 250px;
         padding: 0;
     }
-    .hidden h1{
-        margin-top:3em;
+
+    .hidden h1 {
+        margin-top: 3em;
     }
 
     #list a {
@@ -194,6 +281,4 @@ body>hr {
     .mainImg {
         max-width: 20%;
     }
-
-
 }
